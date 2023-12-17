@@ -1,7 +1,7 @@
 <script setup>
 import "@unocss/reset/tailwind.css";
 const darkMode = ref(false);
-// darkMode.value = true;
+// SdarkMode.value = true;
 </script>
 
 <template>
@@ -18,17 +18,23 @@ const darkMode = ref(false);
 					gap-5)
 				>
 					<!-- Left Sidebar -->
-					<div md:block xs:col-span-1 xl:col-span-2>
+					<div hidden md:!block xs:col-span-1 xl:col-span-2>
 						<div sticky top-0>
 							<SidebarLeft />
 						</div>
 					</div>
 
 					<!-- Main Comtent -->
-					<main>2</main>
+					<main col-span-12 md:col-span-8 xl-col-span-6>
+						<h1>main</h1>
+					</main>
 
 					<!-- Riht Sidebar -->
-					<div>3</div>
+					<div hidden md:!block xl:col-span-4 md:col-span-3>
+						<div sticky top-0>
+							<SidebarRight />
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
