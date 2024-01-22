@@ -1,7 +1,7 @@
 <script setup>
 import "@unocss/reset/tailwind.css";
 const darkMode = ref(false);
-// SdarkMode.value = true;
+// darkMode.value = true;
 </script>
 
 <template>
@@ -24,12 +24,12 @@ const darkMode = ref(false);
 						</div>
 					</div>
 
-					<!-- Main Comtent -->
+					<!-- Main Content -->
 					<main col-span-12 md:col-span-8 xl-col-span-6>
 						<RouterView />
 					</main>
 
-					<!-- Riht Sidebar -->
+					<!-- Right Sidebar -->
 					<div hidden md:!block xl:col-span-4 md:col-span-3>
 						<div sticky top-0>
 							<SidebarRight />
