@@ -3,13 +3,23 @@ import { userTransformer } from "~/server/transformers/user";
 
 export default defineEventHandler(async (event) => {
 	const body = await readBody(event);
-	const { username, password, email, name } = body;
+	const { username, password, email, repeatPassword, name } = body;
 	if (!username || !password || !email || !name) {
 		return sendError(
 			event,
 			createError({
 				statusCode: 400,
 				statusMessage: "Invalid params",
+			})
+		);
+	}
+
+	if (password !== repeatPassword) {
+		return sendError(
+			event,
+			createError({
+				statusCode: 400,
+				statusMessage: "Passwords do not match",
 			})
 		);
 	}

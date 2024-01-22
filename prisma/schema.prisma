@@ -30,6 +30,17 @@ model User {
 
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+
+  refreshToken  RefreshToken[]
   // posts         Post[]
   @@map(name: "users")
+}
+
+model RefreshToken{
+  id          String    @default(cuid()) @id @map("_id")
+  token       String    @unique
+  createdAt   DateTime  @default(now()) @map(name: "created_at")
+  updatedAt   DateTime  @updatedAt @map(name: "updated_at")
+  userId      String    
+  user        User      @relation(fields: [userId], references: [id])
 }

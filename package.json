@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.5",
     "@unocss/nuxt": "^0.58.0",
     "@unocss/preset-attributify": "^0.58.0",
     "nuxt": "^3.8.2",
@@ -25,6 +26,7 @@
     "@prisma/client": "5.7.0",
     "@unocss/reset": "^0.58.0",
     "bcrypt": "^5.1.1",
-    "heroicons-vue3": "^1.0.2"
+    "heroicons-vue3": "^1.0.2",
+    "jsonwebtoken": "^9.0.2"
   }
 }
