@@ -21,10 +21,19 @@ export default defineEventHandler(async (event) => {
 
 	// Is the user registered
 	const user = await getUserByUsername(username);
+	if (!user) {
+		return sendError(
+			event,
+			createError({
+				statusCode: 400,
+				statusMessage: "Invalid username or password",
+			})
+		);
+	}
 
 	// Compare password
 	const doesThePasswordMatch = await bcrypt.compare(password, user.password);
-	if (!user || !doesThePasswordMatch) {
+	if (!doesThePasswordMatch) {
 		return sendError(
 			event,
 			createError({

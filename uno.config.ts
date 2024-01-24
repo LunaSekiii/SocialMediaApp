@@ -5,6 +5,7 @@ import {
 	presetWind,
 	transformerVariantGroup,
 } from "unocss";
+import { presetForms } from "@julr/unocss-preset-forms";
 
 export default defineConfig({
 	presets: [
@@ -17,6 +18,7 @@ export default defineConfig({
 		presetWind({
 			dark: "class",
 		}),
+		presetForms(), // Add preflights and new rules likes `.form-input`
 	],
 	transformers: [transformerVariantGroup()],
 	theme: {

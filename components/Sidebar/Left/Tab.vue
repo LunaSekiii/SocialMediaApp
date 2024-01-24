@@ -27,7 +27,7 @@ const textClasses = computed(() => (active ? "font-semibold" : "font-normal"));
 		<div w6 h6 text-dark dark:text-white>
 			<slot />
 		</div>
-		<div ml4 text-xl hidden xl:!block :class="textClasses">
+		<div ml4 text-xl hidden :class="[textClasses, 'xl:!block']">
 			{{ title }}
 		</div>
 	</NuxtLink>

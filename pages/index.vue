@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const loading = ref(false);
+
+const { useAuthUser } = useAuth();
+const user = useAuthUser();
 </script>
 
 <template>

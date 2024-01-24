@@ -8,3 +8,6 @@ declare interface User {
 	createdAt?: Date;
 	updatedAt?: Date;
 }
+
+declare interface UserTransformer
+	extends Omit<User, "password" | "createAt" | "updateAt"> {}
