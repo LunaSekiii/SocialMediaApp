@@ -55,6 +55,11 @@ const { defaultTransition } = useUnoConfig();
 			<SidebarLeftTab title="More">
 				<DotsCircleHorizontalIcon />
 			</SidebarLeftTab>
+			<div>
+				<UIButton liquid size="lg">
+					<span font-bold>Tweet</span></UIButton
+				>
+			</div>
 		</div>
 	</div>
 </template>

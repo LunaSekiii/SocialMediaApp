@@ -4,7 +4,7 @@ import type { JwtPayload } from "jsonwebtoken";
 import { getUserById } from "../db/user";
 
 export default defineEventHandler(async (event) => {
-	const endpoints = ["/api/auth/user"];
+	const endpoints = ["/api/auth/user", "/api/user/tweets", "/api/tweets"];
 
 	const isHandledByMiddleware = endpoints.some((endpoint) => {
 		const pattern = new UrlPattern(endpoint);

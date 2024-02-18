@@ -58,9 +58,11 @@ export default function useAuth() {
 
 	const getUser = async () => {
 		try {
-			const data = await useFetchApi<UserTransformer>("/api/auth/user");
-			setUser(data);
-			return Promise.resolve(data);
+			const { user } = await useFetchApi<{ user: UserTransformer }>(
+				"/api/auth/user"
+			);
+			setUser(user);
+			return Promise.resolve(user);
 		} catch (error) {
 			return Promise.reject(error);
 		}
